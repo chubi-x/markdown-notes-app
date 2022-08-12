@@ -21,12 +21,32 @@ nav {
 }
 
 .logo-image-container img {
-  width: 50px;
+  width: 40px;
 }
 
 .logo-header h1 {
   color: white;
   font-family: 'Rubik Marker Hatch', cursive;
+  font-size: 22px;
+}
+
+/* SPLIT STYLES */
+.split {
+  display: flex;
+}
+
+.gutter {
+  background-color: var(--green);
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+}
+
+.gutter.gutter-horizontal:hover {
+  cursor: ew-resize;
 }
 
 @media only screen and (max-width: 400px) {
