@@ -1,5 +1,19 @@
 import React from "react";
-export default function Sidebar() {
+export default function Sidebar({
+  createNote,
+  notes,
+  currentNote,
+  setCurrrentNote,
+}) {
+  const noteElements = notes.map((note) => (
+    <div
+      className={`${currentNote === note.id ? "selected" : ""} note`}
+      key={note.id}
+      onClick={() => setCurrrentNote(note.id)}
+    >
+      <p> {note.body}</p>
+    </div>
+  ));
   return (
     <div className="sidebar">
       <div className="sidebar-header-container">
@@ -7,10 +21,10 @@ export default function Sidebar() {
           <h1>Notes</h1>
         </div>
         <div className="new-note">
-          <button> + </button>
+          <button onClick={createNote}> + </button>
         </div>
       </div>
-      <div className="note"></div>
+      {noteElements}
     </div>
   );
 }
