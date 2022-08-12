@@ -1,4 +1,36 @@
 body {
   --green: #1ABC9C;
   --yellow: #FFC107;
+  --purple: #c107ff;
+  margin: 0;
+}
+
+nav {
+  background-color: var(--purple);
+
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.logo-image-container {
+  margin-right: 10px;
+}
+
+.logo-image-container img {
+  width: 50px;
+}
+
+.logo-header h1 {
+  color: white;
+  font-family: 'Rubik Marker Hatch', cursive;
+}
+
+@media only screen and (max-width: 400px) {
+  .logo-container {
+    padding-left: 20px;
+  }
 }

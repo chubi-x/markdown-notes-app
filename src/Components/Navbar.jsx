@@ -4,7 +4,12 @@ export default function Navbar() {
   return (
     <nav>
       <div className="logo-container">
-        <img src={logo} alt="logo" />
+        <div className="logo-image-container">
+          <img src={logo} alt="logo" />
+        </div>
+        <div className="logo-header">
+          <h1>Notelify</h1>
+        </div>
       </div>
     </nav>
   );
