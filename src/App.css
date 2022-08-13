@@ -7,6 +7,7 @@ body {
 
 .app {
   height: 100vh;
+  font-family: 'Rubik';
 }
 
 nav {
@@ -34,6 +35,9 @@ nav {
   font-family: 'Rubik Marker Hatch', cursive;
   font-size: 22px;
 }
+
+/* WELCOME SCREEN STYLES */
+
 
 /* SPLIT STYLES */
 .split {
@@ -91,17 +95,52 @@ nav {
 }
 
 .sidebar .note {
-  height: 30px;
+  height: 50px;
   border-bottom: 1px solid red;
   cursor: pointer;
-  padding-left: 10px;
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .sidebar .note p {
   margin: 0px;
 }
 
+div.sidebar div.trash-icon {
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
+div.sidebar div.note:hover div.trash-icon {
+  display: block;
+}
+
 .selected {
+  background-color: var(--green);
+  color: white;
+}
+
+section.editor div.mde-header {
+  background-color: var(--yellow);
+}
+
+section.editor div.mde-header div.mde-tabs button:hover,
+section.editor div.mde-header ul.mde-header-group button:hover {
+  color: white;
+  background-color: var(--green);
+}
+
+section.editor div.mde-header div.mde-tabs button {
+  font-family: 'Rubik';
+
+  color: black;
+  border-radius: 5px;
+}
+
+section.editor div.mde-header div.mde-tabs button.selected {
   background-color: var(--green);
   color: white;
 }
