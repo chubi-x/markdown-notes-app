@@ -4,6 +4,7 @@ export default function Sidebar({
   notes,
   currentNote,
   setCurrrentNote,
+  deleteNote,
 }) {
   const noteElements = notes.map((note) => (
     <div
@@ -12,6 +13,19 @@ export default function Sidebar({
       onClick={() => setCurrrentNote(note.id)}
     >
       <p> {note.body}</p>
+      <div
+        className="trash-icon"
+        onClick={(event) => deleteNote(event, note.id)}
+      >
+        <lottie-player
+          src="https://assets8.lottiefiles.com/packages/lf20_efjoexgg.json"
+          background="transparent"
+          speed="1"
+          style={{ width: "20px", height: "20px" }}
+          loop
+          hover
+        ></lottie-player>
+      </div>
     </div>
   ));
   return (
