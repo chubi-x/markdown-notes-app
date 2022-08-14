@@ -1,46 +1,103 @@
+html,
+body {
+  height: 100vh;
+}
+
 body {
   --green: #1ABC9C;
   --yellow: #FFC107;
-  --purple: #c107ff;
+  --dark-teal: rgb(0, 42, 61);
   margin: 0;
 }
 
-.app {
-  height: 100vh;
+div.app {
   font-family: 'Rubik';
 }
 
-nav {
-  background-color: var(--purple);
-  height: 10vh;
+/* div.app div.background-animation {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%
+} */
 
+nav {
+  background-color: var(--dark-teal);
 }
 
-.logo-container {
+div.logo-container {
   display: flex;
   align-items: center;
   padding-left: 50px;
 }
 
-.logo-image-container {
+div.logo-image-container {
   margin-right: 10px;
 }
 
-.logo-image-container img {
+div.logo-image-container img {
   width: 40px;
 }
 
-.logo-header h1 {
+div.logo-header h1 {
   color: white;
   font-family: 'Rubik Marker Hatch', cursive;
   font-size: 22px;
 }
 
 /* WELCOME SCREEN STYLES */
+.welcome-screen-container {
+  background-image: url('./assets/bg-blob.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 89vh;
 
+}
+
+div.welcome-screen {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  /* background-image: url('./assets/bg-blob-1.svg'); */
+  /* padding: 50px; */
+  /* padding-top: 2%; */
+}
+
+div.welcome-screen h1 {
+  /* margin: 10px; */
+  color: white;
+  text-shadow: 2px 2px var(--green)
+}
+
+div.welcome-screen-animation {
+  width: 90%;
+}
+
+div.welcome-screen button.new-note-button {
+  height: 40px;
+  width: 100px;
+  margin: 20px;
+  cursor: pointer;
+  background-color: var(--green);
+  color: var(--dark-teal);
+  font-size: 15px;
+  font-family: 'Rubik';
+  border-radius: 8px;
+  border: none;
+  /* text-shadow: 1px 1px var(--yellow); */
+}
+
+div.welcome-screen button.new-note-button:hover {
+  transition: background-color 0.2s linear;
+  background-color: var(--yellow);
+}
 
 /* SPLIT STYLES */
-.split {
+div.split {
   display: flex;
 }
 
@@ -48,7 +105,7 @@ nav {
   background-color: rgb(184, 184, 184);
   background-repeat: no-repeat;
   background-position: center;
-  height: 90vh;
+  height: 89vh;
 }
 
 .gutter.gutter-horizontal {
@@ -60,58 +117,74 @@ nav {
 }
 
 /* SIDEBAR STYLES */
-.sidebar-header-container {
+div.sidebar {
+  height: 89vh;
+  overflow-y: auto;
+  /* background-image: url('./assets/sun-tornado.svg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+div.sidebar-header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--yellow);
 }
 
-.sidebar-header {
+div.sidebar-header {
   width: 100%;
 }
 
-.sidebar-header h1 {
+div.sidebar-header h1 {
   text-align: center;
   font-family: 'Rubik Mono One',
     cursive;
   font-size: 1rem;
-  color: var(--purple);
+  color: var(--dark-teal);
 
 }
 
-.sidebar-header-container .new-note button {
+div.sidebar-header-container div.new-note button {
   border: none;
   font-size: 0.8rem;
   cursor: pointer;
-  background-color: var(--green);
+  background-color: var(--dark-teal);
   color: white;
   border-radius: 5px;
   margin-right: 1rem
 }
 
-.sidebar-header-container .new-note button:active {
+div.sidebar-header-container div.new-note button:active {
   transform: scale(0.9);
 }
 
-.sidebar .note {
+div.sidebar div.note {
   height: 50px;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid var(--dark-teal);
   cursor: pointer;
   padding: 0px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
 }
 
-.sidebar .note p {
+div.sidebar div.note p.note-title {
   margin: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 div.sidebar div.trash-icon {
   width: 20px;
   height: 20px;
   display: none;
+  background-color: white;
+  border-radius: 40%;
+  padding: 2px;
 }
 
 div.sidebar div.note:hover div.trash-icon {
@@ -119,7 +192,7 @@ div.sidebar div.note:hover div.trash-icon {
 }
 
 .selected {
-  background-color: var(--green);
+  background-color: var(--dark-teal);
   color: white;
 }
 
@@ -130,7 +203,7 @@ section.editor div.mde-header {
 section.editor div.mde-header div.mde-tabs button:hover,
 section.editor div.mde-header ul.mde-header-group button:hover {
   color: white;
-  background-color: var(--green);
+  background-color: var(--dark-teal);
 }
 
 section.editor div.mde-header div.mde-tabs button {
@@ -141,29 +214,40 @@ section.editor div.mde-header div.mde-tabs button {
 }
 
 section.editor div.mde-header div.mde-tabs button.selected {
-  background-color: var(--green);
+  background-color: var(--dark-teal);
   color: white;
 }
 
+@media only screen and (max-width: 700px) {
+  div.welcome-screen {
+    padding-top: 100px;
+    width: 350px;
+  }
+}
+
 @media only screen and (max-width: 400px) {
-  .logo-container {
+  div.logo-container {
     padding-left: 20px;
   }
 
-  .sidebar-header-container {
+  div.welcome-screen {
+    width: 250px;
+  }
+
+  div.sidebar-header-container {
     padding: 0px 5px;
   }
 
-  .sidebar-header h1 {
+  div.sidebar-header h1 {
     font-size: 15px;
 
   }
 
-  .sidebar-header-container .new-note {
+  div.sidebar-header-container div.new-note {
     margin-bottom: 3px;
   }
 
-  .sidebar-header-container .new-note button {
+  div.sidebar-header-container div.new-note button {
     font-size: 10px;
   }
 

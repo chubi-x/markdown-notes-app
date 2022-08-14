@@ -52,7 +52,12 @@ function App() {
   // delete notes function
   function deleteNote(event, noteId) {
     event.stopPropagation();
-    setCurrentNoteId(notes[0].id);
+    for (let i = 0; i < notes.length; i++) {
+      if (notes[i].id === noteId && notes[i - 1]) {
+        setCurrentNoteId(notes[i - 1].id);
+        break;
+      }
+    }
     setNotes((oldNotes) => oldNotes.filter((note) => note.id != noteId));
   }
   return (
@@ -79,9 +84,33 @@ function App() {
           )}
         </Split>
       ) : (
-        <div className="welcome-screen">
-          <h1>You do not have any notes.</h1>
-          <button onClick={createNote}>Make one</button>
+        <div className="welcome-screen-container">
+          <div className="welcome-screen">
+            {/* <div className="background-animation">
+            <lottie-player
+              src="https://assets8.lottiefiles.com/packages/lf20_1knc10jz.json"
+              mode="bounce"
+              background="transparent"
+              speed="1"
+              style={{ width: "100%" }}
+              loop
+              autoplay
+            ></lottie-player>
+          </div> */}
+            <h1>You do not have any notes.</h1>
+            <div className="welcome-screen-animation">
+              <lottie-player
+                src="https://assets5.lottiefiles.com/packages/lf20_kttlzfhh.json"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay
+              ></lottie-player>
+            </div>
+            <button onClick={createNote} className="new-note-button">
+              Create One
+            </button>
+          </div>
         </div>
       )}
     </div>
