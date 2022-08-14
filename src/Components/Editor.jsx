@@ -27,7 +27,8 @@ export default function Editor({ currentNote, updateNote }) {
         }
         minEditorHeight={80}
         heightUnits="vh"
-      />
+        minPreviewHeight={71}
+      />{" "}
     </section>
   );
 }
