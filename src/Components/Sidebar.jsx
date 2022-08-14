@@ -12,7 +12,7 @@ export default function Sidebar({
       key={note.id}
       onClick={() => setCurrrentNote(note.id)}
     >
-      <p> {note.body}</p>
+      <p className="note-title"> {note.body}</p>
       <div
         className="trash-icon"
         onClick={(event) => deleteNote(event, note.id)}
