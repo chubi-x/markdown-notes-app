@@ -3,7 +3,7 @@
 Notelify is a fun and colorful notes app that lets you take Github level markdown notes that persist, even when you close your browser! '
 
 # Functionality ⚒️
-- Create, edit, and delete beautiful markdown notes with functionality on park with Github's editor
+- Create, edit, and delete beautiful markdown notes with functionality on par with Github's editor
 - Uses local storage to save notes so they persist
 - edit notes in resizeable split screen view
 - features mobile view
