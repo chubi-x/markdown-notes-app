@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 export default function Sidebar({
   createNote,
   notes,
   currentNote,
   setCurrrentNote,
   deleteNote,
+  toggleSidebar,
 }) {
   const noteElements = notes.map((note) => (
     <div
       className={`${currentNote === note.id ? "selected" : ""} note`}
       key={note.id}
-      onClick={() => setCurrrentNote(note.id)}
+      onClick={() => {
+        setCurrrentNote(note.id);
+        toggleSidebar();
+      }}
     >
-      <p className="note-title"> {note.body}</p>
+      <p className="note-title"> {note.body.split("\n")[0]}</p>
       <div
         className="trash-icon"
         onClick={(event) => deleteNote(event, note.id)}

@@ -12,6 +12,11 @@ body {
 
 div.app {
   font-family: 'Rubik';
+  height: 100%;
+  background-image: url('./assets/bg-blob.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 /* div.app div.background-animation {
@@ -27,10 +32,25 @@ nav {
   background-color: var(--dark-teal);
 }
 
+div.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10%;
+}
+
 div.logo-container {
   display: flex;
   align-items: center;
   padding-left: 50px;
+}
+
+div.show-notes-button {
+  color: white;
+  font-size: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+  /* margin-right: 40px; */
 }
 
 div.logo-image-container {
@@ -48,23 +68,15 @@ div.logo-header h1 {
 }
 
 /* WELCOME SCREEN STYLES */
-.welcome-screen-container {
-  background-image: url('./assets/bg-blob.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 89vh;
-
-}
 
 div.welcome-screen {
   width: 450px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
   /* background-image: url('./assets/bg-blob-1.svg'); */
-  /* padding: 50px; */
-  /* padding-top: 2%; */
 }
 
 div.welcome-screen h1 {
@@ -75,6 +87,7 @@ div.welcome-screen h1 {
 
 div.welcome-screen-animation {
   width: 90%;
+  /* height: 50px; */
 }
 
 div.welcome-screen button.new-note-button {
@@ -99,13 +112,14 @@ div.welcome-screen button.new-note-button:hover {
 /* SPLIT STYLES */
 div.split {
   display: flex;
+  height: auto;
 }
 
 .gutter {
   background-color: rgb(184, 184, 184);
   background-repeat: no-repeat;
   background-position: center;
-  height: 89vh;
+  height: auto;
 }
 
 .gutter.gutter-horizontal {
@@ -118,11 +132,10 @@ div.split {
 
 /* SIDEBAR STYLES */
 div.sidebar {
-  height: 89vh;
+  /* height: 89vh; */
   overflow-y: auto;
+  background-color: white;
   /* background-image: url('./assets/sun-tornado.svg'); */
-  background-repeat: no-repeat;
-  background-size: cover;
 
 }
 
@@ -179,8 +192,8 @@ div.sidebar div.note p.note-title {
 }
 
 div.sidebar div.trash-icon {
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   display: none;
   background-color: white;
   border-radius: 40%;
@@ -218,16 +231,17 @@ section.editor div.mde-header div.mde-tabs button.selected {
   color: white;
 }
 
+
 @media only screen and (max-width: 700px) {
   div.welcome-screen {
-    padding-top: 100px;
+    padding-top: 40px;
     width: 350px;
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   div.logo-container {
-    padding-left: 20px;
+    padding-left: 10px;
   }
 
   div.welcome-screen {
@@ -251,4 +265,37 @@ section.editor div.mde-header div.mde-tabs button.selected {
     font-size: 10px;
   }
 
+}
+
+@media only screen and (max-height: 500px) {
+  div.logo-image-container img {
+    width: 30px;
+  }
+
+  div.logo-header h1 {
+    font-size: 15px;
+  }
+
+  div.welcome-screen-container {
+    height: 90vh;
+  }
+
+  div.welcome-screen {
+    justify-content: space-evenly;
+    height: 100%;
+    padding-top: 0px;
+  }
+
+  div.welcome-screen h1 {
+    /* font-size: 22px; */
+  }
+
+  div.welcome-screen-animation {
+    width: 150px;
+  }
+
+  div.welcome-screen button.new-note-button {
+    margin: 0px;
+    font-size: 12px;
+  }
 }
