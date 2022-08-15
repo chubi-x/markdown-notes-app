@@ -97,20 +97,21 @@ function App() {
       toggleSidebar={toggleSidebar}
     />
   );
-  const editorTab = (
+  const editorTab = currentNoteId && notes.length > 0 && (
     <Editor updateNote={updateNote} currentNote={findCurrentNote()} />
   );
   const splitView = (
     <Split
       sizes={[30, 70]}
-      direction="horizontal"
-      className="split"
+      direction={"horizontal"}
+      className={"split"}
       gutterSize={7}
-      cursor="ew-resize"
+      cursor={"ew-resize"}
       dragInterval={1}
     >
       {sidebarTab}
-      {currentNoteId && notes.length > 0 && editorTab}
+      <Editor updateNote={updateNote} currentNote={findCurrentNote()} />
+      {/* {editorTab} */}
     </Split>
   );
   const editorView = currentNoteId && notes.length > 0 && editorTab;
