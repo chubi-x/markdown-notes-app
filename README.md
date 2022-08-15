@@ -16,4 +16,5 @@ Notelify is a fun and colorful notes app that lets you take Github level markdow
 - welcome screen and trash animations: https://lottiefiles.com
 
 # DEMO 🎮
-![md-notes](https://user-images.githubusercontent.com/34838966/184674072-1e0daf89-1450-4baa-939c-7f085829573a.gif)
+
+![md-notes](https://user-images.githubusercontent.com/34838966/184677989-d80e763b-305e-4910-9257-027c2c8ba203.gif)
